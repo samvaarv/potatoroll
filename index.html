@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roll the Potato</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div id="start-screen">
-        <p>Roll the potato to unlock a surprise</p>
-        <button id="start-button">Start playing</button>
+      <p>Roll the potato to unlock a surprise</p>
+      <button id="start-button">Start playing</button>
     </div>
     <div id="game-screen" class="hidden">
-        <div id="counter">0</div>
-        <div id="background">
-            <svg id="hill" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
-                <path id="hill-path" d="M0,100 L400,100 Q500,100 600,200 T1200,400" fill="none" stroke="none"/>
-                <path d="M0,100 L400,100 Q500,100 600,200 T1200,400 L1200,500 L0,500 Z" fill="#6B8E23"/>
-            </svg>
-            <img id="potato" src="potato.png" alt="Potato">
-        </div>
+      <div id="counter">0</div>
+      <div id="background">
+        <svg
+          id="hill"
+          viewBox="0 0 1200 400"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <path
+            id="hill-path"
+            d="M0,300 Q300,100 600,200 T1200,400"
+            fill="none"
+            stroke="none"
+          />
+          <path
+            d="M0,300 Q300,100 600,200 T1200,400 L1200,500 L0,500 Z"
+            fill="#6B8E23"
+          />
+        </svg>
+        <img id="potato" src="potato.png" alt="Potato" />
+      </div>
     </div>
     <div id="video-screen" class="hidden">
-        <video id="surprise-video" src="rick-roll.mp4" loop autoplay></video>
+      <video id="surprise-video" src="rick-roll.mp4" loop autoplay></video>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
