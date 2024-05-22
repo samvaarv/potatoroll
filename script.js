@@ -45,7 +45,7 @@ function rollPotato(path, pathLength, startPoint) {
   potato.onclick = null; // Disable further clicks during animation
   let startTime = null;
 
-  const animationDuration = 5000; // 5 seconds
+  const animationDuration = 3000;
   const audio = new Audio("wee.mp3");
   audio.play();
 
@@ -68,7 +68,7 @@ function rollPotato(path, pathLength, startPoint) {
     } else {
       counter++;
       counterDisplay.textContent = counter;
-      if (counter >= 3) {
+      if (counter >= 2) {
         gameScreen.classList.add("hidden");
         playVideo();
       } else {
