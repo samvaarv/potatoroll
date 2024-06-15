@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Luckiest Guy", cursive;
+  user-select: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#start-screen {
+  position: relative;
+  width: 100svw;
+  height: 100svh;
+  overflow: hidden;
+}
+
+#start-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.game-info-block {
+  position: absolute;
+  inset: 0;
+}
+
+.game-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-title {
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  color: #c80036;
+  -webkit-text-stroke: 3px #fff;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  margin-top: 20vh;
+}
+
+.game-desc {
+  font-family: "Yatra One", system-ui;
+  font-size: clamp(1rem, 5vw, 2rem);
+  max-width: 30ch;
+  text-align: center;
+  margin-top: 0;
+  color: #510b16;
+}
+
+#start-button {
+  text-align: center;
+  display: inline-block;
+  font-family: "Luckiest Guy", cursive;
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #ee4e4e;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  text-shadow: -1px -1px #0c1844, 1px 1px #f6eec9;
+  color: #fff7f1;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 0.2em #c80036;
+  cursor: pointer;
+}
+
+.start-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.2em;
+}
+
+#game-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#video-screen {
+  width: 100svw;
+  height: 100svh;
+}
+
+#surprise-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.counter-block {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  color: #ff7742;
+  background: url("../assets/counter.svg") center no-repeat;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+#background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2f80ed, #56ccf2) no-repeat center center fixed;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+#background::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/clouds.svg") repeat-x;
+  background-size: cover;
+  animation: moveClouds 60s linear infinite;
+}
+
+@keyframes moveClouds {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.game-foreground {
+  position: relative;
+  width: 100vw;
+}
+
+/* #hill {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+} */
+
+#potato {
+  position: absolute;
+  width: 70px;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.grass {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.tree {
+  position: absolute;
+  height: 80vh;
+  right: -12%;
+  bottom: 0;
+  transform: scaleX(-1);
+  z-index: 0;
+}

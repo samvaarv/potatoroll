@@ -21,7 +21,7 @@ function setupPotato() {
 
   potato.style.transition = "none";
   potato.style.left = `${flatPlainStart.x - potato.width / 2}px`;
-  potato.style.top = `${flatPlainStart.y + potato.height / 2}px`;
+  potato.style.top = `${flatPlainStart.y - potato.height / 2}px`;
 
   potato.onclick = () => rollPotato(path, pathLength, flatPlainStart);
 }
@@ -31,17 +31,17 @@ function rollPotato(path, pathLength, startPoint) {
   let startTime = null;
 
   const animationDuration = 3000; // 3 seconds
-  const audio = new Audio("wee.mp3");
+  const audio = new Audio("./assets/wee.mp3");
   audio.play();
 
   function animate(time) {
     if (!startTime) startTime = time;
     const elapsed = time - startTime;
     const progress = Math.min(elapsed / animationDuration, 1);
-    const point = path.getPointAtLength(400 + progress * (pathLength - 500));
+    const point = path.getPointAtLength(400 + progress * (pathLength - 400));
 
-    potato.style.left = `${point.x + potato.width / 2}px`;
-    potato.style.top = `${point.y + potato.height / 2}px`;
+    potato.style.left = `${point.x - potato.width / 2}px`;
+    potato.style.top = `${point.y - potato.height / 2}px`;
     potato.style.transform = `rotate(${progress * 1440}deg)`; // 4 full rotations
 
     if (progress < 1) {

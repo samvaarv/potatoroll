@@ -4,38 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roll the Potato</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div id="start-screen">
-      <p>Roll the potato to unlock a surprise</p>
-      <button id="start-button">Start playing</button>
-    </div>
-    <div id="game-screen" class="hidden">
-      <div id="counter">0</div>
-      <div id="background">
-        <svg
-          id="hill"
-          viewBox="0 0 1200 400"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <path
-            id="hill-path"
-            d="M0,100 L400,100 Q500,100 600,200 T1200,400"
-            fill="none"
-            stroke="none"
-          />
-          <path
-            d="M0,100 L400,100 Q500,100 600,200 T1200,400 L1200,500 L0,500 Z"
-            fill="#6B8E23"
-          />
-        </svg>
-        <img id="potato" src="potato.png" alt="Potato" />
+      <img src="assets/background.jpg" alt="splash image" />
+      <div class="game-info-block">
+        <div class="game-info">
+          <h1 class="game-title">Potato Roll</h1>
+          <p class="game-desc">
+            Make the potato roll over the hill 3 times to win the game
+          </p>
+          <button id="start-button">START</button>
+        </div>
       </div>
     </div>
-    <div id="video-screen" class="hidden">
-      <video id="surprise-video" src="rick-roll.mp4" loop autoplay></video>
+    <div id="game-screen" class="hidden">
+      <div class="counter-block">
+        <div id="counter">0</div>
+      </div>
+      <div id="background">
+        <div class="game-foreground">
+          <svg
+            id="hill"
+            viewBox="0 0 1200 400"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <!-- Define the gradient -->
+            <defs>
+              <linearGradient id="myGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop
+                  offset="0%"
+                  style="stop-color: #a2c44c; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #455c4f; stop-opacity: 1"
+                />
+              </linearGradient>
+            </defs>
+            <path
+              id="hill-path"
+              d="M0,100 L400,100 Q500,100 600,200 T1200,400"
+              fill="none"
+              stroke="none"
+            />
+            <path
+              d="M0,100 L400,100 Q500,100 600,200 T1200,400 L1200,500 L0,500 Z"
+              fill="url(#myGradient)"
+            />
+          </svg>
+          <img id="potato" src="assets/potato.png" alt="Potato" />
+        </div>
+        <img class="grass" src="assets/flowers.png" alt="grass">
+      </div>
+      <img class="tree" src="assets/tree.svg" alt="tree">
     </div>
-    <script src="script.js"></script>
+    <div id="video-screen" class="hidden">
+      <video
+        id="surprise-video"
+        src="assets/rick-roll.mp4"
+        loop
+        autoplay
+      ></video>
+    </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
