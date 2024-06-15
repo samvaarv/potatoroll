@@ -65,6 +65,7 @@ function playVideo() {
   videoScreen.classList.remove("hidden");
   const video = document.getElementById("surprise-video");
   if (video.canPlayType && video.canPlayType("video/mp4")) {
+    video.muted = false; // Unmute the video when playing
     video.play();
   }
 }
